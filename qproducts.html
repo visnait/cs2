@@ -1,0 +1,697 @@
+                                                                                <!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Qproducts</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/Chart.bundle.min.js"></script>
+
+
+    <style>
+            .abo-icon-compare {
+                max-width: 100px;
+                vertical-align: middle;
+            }
+            .cell {
+                padding: 12px;
+            }
+            .products div[class^="col-xs"]{
+                border-right: 1px solid #b0b0b0;
+                border-top: 1px solid #fdfdfd;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .font-weight-bold {
+                font-weight: 700;
+            }
+
+            .text-primary {
+                color: #d40037;
+            }
+
+        .container {
+            display:table;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            .row {
+                height: 100%;
+                display: table-row;
+            }
+
+            .row .no-float {
+                display: table-cell;
+                float: none;
+            }
+    </style>
+</head>
+
+<body>
+<div class="container products" style="min-height: 600px;background-color: #f7f7f7">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-xs-2 no-float">
+
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/icon_xl.svg"/>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/icon_l.svg" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/icon_m.svg" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/icon_s.svg" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/icon_xs.svg" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-center">
+                        <span class="font-weight-bold">All-in-One XL</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <span class="font-weight-bold">All-in-One L</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <span class="font-weight-bold">All-in-One M</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-center">
+                        <span class="font-weight-bold">All-in-One Super Deal</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <span class="font-weight-bold">All-in-One XS</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-2 no-float">
+                    <div class="cell">
+                        <span class="text-primary font-weight-bold">
+                            Internet
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/100.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/75.png" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/50.png" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/50.png" />
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-center">
+                        <img class="abo-icon-compare" src="img/5.png" />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            Download
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <span>400 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>250 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>100 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <span>100 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>5 Mbit/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            Upload
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <span>40 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>25 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>10 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <span>10 Mbit/s</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>0.5 Mbit/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            IP Adressen
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <span>1 dyn. IP/ Fixe IP nicht möglich</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>1 dyn. IP/ Fixe IP nicht möglich</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>1 dyn. IP/ Fixe IP nicht möglich</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <span>2 dyn. IP/ Fixe IP nicht möglich </span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>2 dyn. IP/ Fixe IP nicht möglich </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            Viren-/Spamfilter für E-Mails
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            Wireless Modem
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>Option</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span class="">
+                            Quickline Cloud
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        <span>1 TB</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>1 TB</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>1 TB</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <span>50 GB</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>50 GB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-2 no-float">
+                    <div class="cell">
+                        <span class="text-primary font-weight-bold">
+                            TV
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>Quickline TV</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>Quickline TV</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>Quickline TV</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <span>Digital-TV</span>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <span>Digital-TV</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>Packet</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        Plus & Entertainment
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        Plus
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        Plus
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        Plus
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>Sender</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        215+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        190+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        190+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        190+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        130+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>davon HD</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        115+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        115+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        90+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        75+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        60+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>davon HD</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        115+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        115+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        90+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        75+
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        60+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>Empfangsgerät</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        Quickline TV Box
+                        <img class="abo-icon-compare" src="img/Box_Front_mit_Fernbedienung.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        Quickline TV Box
+                        <img class="abo-icon-compare" src="img/Box_Front_mit_Fernbedienung.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        Quickline TV Box
+                        <img class="abo-icon-compare" src="img/Box_Front_mit_Fernbedienung.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        HD- Set-Top-Box/CA-Modul (CI+)
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        HD- Set-Top-Box/CA-Modul (CI+)
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>7 Tage Replay</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        135+ Sender
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        135+ Sender
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        135+ Sender
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-2  no-float">
+                    <div class="cell">
+                        <span>Videothek</span>
+                    </div>
+                </div>
+                <div class="col-xs-2  no-float">
+                    <div class="cell text-right">
+                        2'100+ Filme
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        2'100+ Filme
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        2'100+ Filme
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float ">
+                    <div class="cell text-right">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-xs-2 no-float">
+                    <div class="cell text-right">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function(){
+
+
+    });
+
+
+</script>
+
+</body>
+</html>

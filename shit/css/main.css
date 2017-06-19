@@ -1,0 +1,131 @@
+body {
+	background-color: #000;
+	font-family: verdana;
+
+}
+
+#container {
+	width: 1260px;
+	height: 860px;
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #2DAB29),
+		color-stop(1, #10381C)
+	);
+	background-image: -o-linear-gradient(bottom, #2DAB29 0%, #10381C 100%);
+	background-image: -moz-linear-gradient(bottom, #2DAB29 0%, #10381C 100%);
+	background-image: -webkit-linear-gradient(bottom, #2DAB29 0%, #10381C 100%);
+	background-image: -ms-linear-gradient(bottom, #2DAB29 0%, #10381C 100%);
+	background-image: linear-gradient(to bottom, #2DAB29 0%, #10381C 100%);
+
+}
+
+.stolicka {
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	font-size: 9px;
+	font-family: vardana;
+	cursor: pointer;
+	color: #fff;
+
+	text-align: center;
+	vertical-align: middle;
+}
+
+.s1 {
+	background-color: #6bc325;
+}
+
+.s2 {
+	background-color: #208020;
+}
+
+
+
+.footer {
+	position: absolute;
+	bottom:0px;
+}
+
+.error {
+	background-color: #db1923;
+	color: #fff;
+	display: none;
+}
+
+
+
+
+
+
+/* Tooltip */
+.ui-tooltip, .arrow:after {
+	background: black;
+	border: 2px solid white;
+}
+.ui-tooltip {
+	padding: 10px 20px;
+	color: white;
+	border-radius: 10px;
+	font: bold 14px "Helvetica Neue", Sans-Serif;
+	text-transform: uppercase;
+	box-shadow: 0 0 7px black;
+}
+.arrow {
+	width: 70px;
+	height: 16px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -35px;
+	bottom: -16px;
+}
+.arrow.top {
+	top: -16px;
+	bottom: auto;
+}
+.arrow.left {
+	left: 20%;
+}
+.arrow:after {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: -20px;
+	width: 25px;
+	height: 25px;
+	box-shadow: 6px 5px 9px -9px black;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	tranform: rotate(45deg);
+}
+.arrow.top:after {
+	bottom: -20px;
+	top: auto;
+}
+
+
+
+.cs2box {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #444444;
+	font-size: 9px;
+	font-family: vardana;
+	cursor: pointer;
+	color: #fff;
+
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 5px;
+
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}

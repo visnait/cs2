@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CS2</title>
+	<link rel="stylesheet" href="css/jquery.ui.all.css">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery-ui-i18n.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+
+			var pos = [];
+			/* Line1*/
+			pos.push({id:'pos0',x: 4,y: 1});
+			pos.push({id:'pos1',x: 6,y: 1});
+
+			/* Line2*/
+			pos.push({id:'pos2',x: 5,y: 2});
+
+			/* Line3*/
+			pos.push({id:'pos3',x: 2,y: 3});
+			pos.push({id:'pos4',x: 3,y: 3});
+
+			pos.push({id:'pos5',x: 5,y: 3});
+
+			pos.push({id:'pos6',x: 7,y: 3});
+			pos.push({id:'pos7',x: 8,y: 3});
+
+			/* Line4*/
+			pos.push({id:'pos8',x: 1,y: 4});
+
+			pos.push({id:'pos9',x: 4,y: 4});
+			pos.push({id:'pos10',x: 5,y: 4});
+			pos.push({id:'pos11',x: 6,y: 4});
+
+			pos.push({id:'pos12',x: 9,y: 4});
+
+			/* Line5*/
+			pos.push({id:'pos13',x: 1,y: 5});
+			pos.push({id:'pos14',x: 5,y: 5});
+			pos.push({id:'pos15',x: 9,y: 5});
+
+			/* Line6*/
+			pos.push({id:'pos16',x: 1,y: 6});
+			pos.push({id:'pos17',x: 5,y: 6});
+			pos.push({id:'pos18',x: 9,y: 6});
+
+			/* Line7*/
+			pos.push({id:'pos19',x: 1,y: 7});
+			pos.push({id:'pos20',x: 5,y: 7});
+			pos.push({id:'pos21',x: 9,y: 7});
+
+			/* Line8*/
+			pos.push({id:'pos22',x: 1,y: 8});
+
+			pos.push({id:'pos23',x: 4,y: 8});
+			pos.push({id:'pos24',x: 5,y: 8});
+			pos.push({id:'pos25',x: 6,y: 8});
+
+			pos.push({id:'pos26',x: 9,y: 8});
+
+
+			/* Line9*/
+			pos.push({id:'pos27',x: 2,y: 9});
+			pos.push({id:'pos28',x: 3,y: 9});
+
+			pos.push({id:'pos29',x: 5,y: 9});
+
+			pos.push({id:'pos30',x: 7,y: 9});
+			pos.push({id:'pos31',x: 8,y: 9});
+
+			/* Line10*/
+			pos.push({id:'pos32',x: 5,y: 10});
+
+			var offset = [];
+			var boxsize = 30;
+			offset.push({x:15,y:4});
+
+			var minx = 1;
+			var maxx = 40;
+			var miny = 1;
+			var maxy = 25;
+			var exploded = 1;
+
+			init();
+
+			function init(){
+				$.each(pos,function(key,value){
+					xrand = Math.floor((Math.random()*maxx)+minx);
+					yrand = Math.floor((Math.random()*maxy)+miny);
+					$('<div/>',{
+						id: pos[key].id,
+						class: 'cs2box s1',
+						alt:  '',
+						title: '',
+						html: '',
+						style: 'position: absolute; left:'+ (xrand * boxsize )  +'px;top:'+(yrand * boxsize )+'px;'
+					}).appendTo('#container');
+				});
+				exploded = 1;
+			}
+
+
+
+
+			$('.cs2box').click(function(){
+				if(exploded == 1){
+					implode();
+					exploded = 0;
+				} else {
+					explode();
+					exploded = 1;
+				}
+
+			});
+
+
+			function explode(){
+
+				for (var i = 0; i < 33; i++){
+					xrand = Math.floor((Math.random()*maxx)+minx)-offset[0].x;
+					$('#pos'+i).animate({
+						left: (xrand * boxsize + offset[0].x * boxsize)  +'px',
+						opacity: "45%"
+					},1400);
+				}
+
+				for (var i = 0; i < 33; i++){
+					yrand = Math.floor((Math.random()*maxy)+miny)-offset[0].y;
+					$('#pos'+i).animate({
+						top: (yrand * boxsize + offset[0].y * boxsize)  +'px',
+						opacity: "45%"
+					},1400);
+				}
+			}
+
+			function implode(){
+				for (var i = 0; i < 33; i++){
+					$('#pos'+i).animate({
+						left: (pos[i].x * boxsize + offset[0].x * boxsize)  +'px'
+					},1400);
+				}
+
+				for (var i = 0; i < 33; i++){
+					$('#pos'+i).animate({
+						top: (pos[i].y * boxsize + offset[0].y * boxsize)  +'px'
+					},1400);
+				}
+			}
+
+			$('.cs2box').draggable({grid:[30,30]});
+
+		});
+
+	</script>
+
+</head>
+<body>
+
+<div id="container" ></div>
+
+
+</body>
+</html>

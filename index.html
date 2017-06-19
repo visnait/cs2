@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chart</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/Chart.bundle.min.js"></script>
+
+
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+<div style="width: 800px; margin:0 auto">
+    <div id="canvas-holder" style="width:100%">
+        <canvas id="doughnut-area" width="200" height="200" ></canvas>
+        <canvas id="line-area" width="200" height="120" ></canvas>
+        <canvas id="bar-area" width="200" height="120" ></canvas>
+
+    </div>
+    <div class="debug">
+
+    </div>
+</div>
+<script type="text/javascript">
+
+    var base_colors_hex = ["#105B63", "#FFFAD5", "#FFD35E", "#DB9E36", "#DB4932", "#022240", "#BFAD92", "#BDCAD6", "#DA1427", "#1B95B7","#C2206B","#0E4E38"];
+    var base_font_family = 'Verdana';
+    var base_font_size_sm = 14;
+    var base_font_size_md = 16;
+    var base_font_size_lg = 18;
+    var base_font_color_dark = '#333333';
+    var base_font_color_light = '#797979';
+    var base_title_padding_sm = 15;
+    var base_title_padding_lg = 35;
+    var base_label_box_width = 15;
+
+   //  alert (hexToRgbA(base_colors_hex[0],0.6));
+
+    /*Donut*/
+
+    var config_donut = {
+        type: 'doughnut',
+        data: {
+            labels: [
+                "Käse",
+                "Frisch käse",
+                "Pulver/Konzentrate",
+                "Übrige Produkte/Dienstleistungen",
+                "Molkereiprodukte",
+                "Frischprodukte"
+            ],
+            datasets: [{
+                data: [27, 6, 6, 9, 27,27],
+                backgroundColor: [
+                    base_colors_hex[0],
+                    base_colors_hex[1],
+                    base_colors_hex[2],
+                    base_colors_hex[3],
+                    base_colors_hex[4],
+                    base_colors_hex[5]
+                ],
+                label: 'Dataset 1'
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'bottom',
+                labels: {
+                    fontColor: base_font_color_light,
+                    fontFamily: base_font_family,
+                    fontSize: base_font_size_sm
+                }
+            },
+            title: {
+                display: true,
+                text: 'UMSATZ NACH PRODUKTEN',
+                fontColor: base_font_color_dark,
+                fontFamily: base_font_family,
+                fontSize: base_font_size_lg
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    };
+
+    /*Line*/
+
+    var config_line = {
+        type: 'line',
+        data: {
+            labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "Jun",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ],
+            datasets: [
+                {
+                    label: "Measure 1",
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: 'rgba(255,0,0,0.3)',
+                    borderColor: '#ff0000',
+                    pointBorderColor: "#ff0000",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointRadius:5 ,
+                    pointHoverRadius:5 ,
+                    data: [27,32,36,49,57,67,65,55,43,52,66,54]
+                },
+                {
+                    label: "Measure 2",
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: hexToRgbA('#bfbfbf',0.7),
+                    borderColor: '#bfbfbf',
+                    pointBorderColor: "#bfbfbf",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointRadius:5 ,
+                    pointHoverRadius:5 ,
+                    data: [57,36,26,79,47,47,51,53,65,36,77,43]
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: base_font_color_light,
+                    fontFamily: base_font_family,
+                    fontSize: base_font_size_sm,
+                    padding: base_title_padding_sm,
+                    boxWidth: base_label_box_width
+                },
+                fullWidth: true
+
+            },
+            title: {
+                display: true,
+                text: 'UMSATZ NACH PRODUKTEN',
+                fontColor: base_font_color_dark,
+                fontFamily: base_font_family,
+                fontSize: base_font_size_lg,
+                fullWidth: true,
+                padding: base_title_padding_lg
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'Month',
+                        fontColor: base_font_color_dark,
+                        fontFamily: base_font_family,
+                        fontSize: base_font_size_md
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'Value',
+                        fontColor: base_font_color_dark,
+                        fontFamily: base_font_family,
+                        fontSize: base_font_size_md
+                    },
+                    ticks: {
+                        min: 0,
+                        max: 100
+                    }
+                }]
+            }
+        }
+    };
+
+    /*Bar*/
+
+    var config_bar = {
+        type: "bar",
+        data: {
+            labels: ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"],
+            datasets: [
+                {
+                    label: "Measure 1",
+                    backgroundColor: '#333',
+                    data: [32,42,37,35,31,27,29,36,38,47,55,59]
+                },
+                {
+                    label: "Measure 2",
+                    backgroundColor: '#FF3333',
+                    data: [30,44,39,31,28,24,23,32,31,41,50,52]
+                },
+                {
+                    label: "Measure 3",
+                    backgroundColor: '#ededed',
+                    data: [14,22,27,25,21,17,19,26,28,37,45,39]
+                }
+            ]
+        },
+        options: {
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: base_font_color_light,
+                    fontFamily: base_font_family,
+                    fontSize: base_font_size_sm,
+                    padding: base_title_padding_sm,
+                    boxWidth: base_label_box_width
+                },
+                fullWidth: true
+
+            },
+            title: {
+                display: true,
+                text: 'BAR CHART',
+                fontColor: base_font_color_dark,
+                fontFamily: base_font_family,
+                fontSize: base_font_size_lg,
+                fullWidth: true,
+                padding: base_title_padding_lg
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+
+    };
+
+    function hexToRgbA(hex, alpha){
+        var c;
+        if(!alpha){
+            alpha = 1;
+        }
+        if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+            c= hex.substring(1).split('');
+            if(c.length== 3){
+                c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+            }
+            c= '0x'+c.join('');
+            return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+','+alpha+')';
+        }
+        throw new Error('Bad Hex');
+    }
+
+
+    jQuery(document).ready(function(){
+
+       jQuery('.debug').text(JSON.stringify(config_bar));
+
+        //var doughnut = jQuery("#doughnut-area");
+        //var doughnutchart = new Chart(doughnut,config_donut);
+
+       //var line = jQuery("#line-area");
+       //var linechart = new Chart(line,config_line);
+
+        var bar = jQuery("#bar-area");
+        var barchart = new Chart(bar,config_bar);
+
+    });
+
+
+</script>
+
+</body>
+</html>

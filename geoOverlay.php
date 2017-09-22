@@ -2,15 +2,12 @@
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', '1');
+include_once "srvconf.con";
 
 if($_GET['isocode2']){
     $isocode2 = $_GET['isocode2'];
     $basurl = '';
 
-    $servername = "mysql.hostinger.sk";
-    $username = "u891076453_geo";
-    $password = "QAZwsx123**";
-    $dbname = "u891076453_geo";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

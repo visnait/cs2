@@ -2,11 +2,7 @@
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', '1');
-$servername = "mysql.hostinger.sk";
-$username = "u891076453_geo";
-$password = "QAZwsx123**";
-$dbname = "u891076453_geo";
-
+include_once "srvconf.con";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
